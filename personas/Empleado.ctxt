@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Empleado
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Empleado\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=nombre
+comment1.target=Empleado(java.lang.String)
+comment1.text=\r\n\ Constructor\ de\ Empleado.\ Asigna\ el\ nombre,\ asigna\ un\ idEmpleado\r\n\ e\ inicializa\ la\ agenda\ con\ un\ ArrayList\ vacia.\ \r\n
+comment2.params=nombre\ unidad\ turno
+comment2.target=Empleado(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment2.text=\r\n\ Constructor\ para\ indicar\ Ubicacion\ inicial\ y\ turno\ \r\n\ del\ empleado\r\n
+comment3.params=
+comment3.target=int\ getIdEmpleado()
+comment3.text=\r\n\ M\u00E9todos\ geters\ y\ seters\r\n
+comment4.params=
+comment4.target=java.lang.String\ toString()
+comment5.params=
+comment5.target=int\ obtenerNuevoIdEmpleado()
+numComments=6

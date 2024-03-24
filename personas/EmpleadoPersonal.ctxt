@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=EmpleadoPersonal
+comment0.text=\r\n\ La\ clase\ EmpleadoPersonal\ representa\ a\ un\ empleado\ de\ la\ unidad\ Personal\ del\ Hospital.\ \r\n\ Todos\ estos\ empleados\ tienen\ un\ horario\ de\ trabajo\ fijo\ con\ turno\ de\ MA\u00D1ANA\ y\ de\ lunes\ a\ viernes.\ \r\n\ \r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=nombre\ unidad
+comment1.target=EmpleadoPersonal(java.lang.String,\ java.lang.String)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ EmpleadoPersonal\r\n
+comment2.params=e
+comment2.target=void\ agregarEmpleado(Empleado)
+comment2.text=\r\n\ Un\ empleado\ de\ administracion\ puede\ agregar\ un\ nuevo\ empleado\ al\ sistema,\ \r\n\ el\ empleado\ queda\ almacenado\ en\ la\ plantilla\ del\ hospital.\ \r\n
+comment3.params=idEmpleado
+comment3.target=void\ eliminarEmpleado(int)
+comment4.params=
+comment4.target=void\ imprimirPlantilla()
+numComments=5
