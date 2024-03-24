@@ -1,5 +1,5 @@
-package personas;
-import modelo.*;
+package modelo;
+import personas.*;
 
 /**
  * Write a description of class Poblador here.
@@ -33,16 +33,16 @@ public class Poblador
         
         //AGREGAR PACIENTES DE PRUEBA
         Paciente pac1 = new Paciente("John Paciente");
-        Archivo.getInstancia().agregarPaciente(pac1);
+        ArchivoPacientes.getInstancia().agregarPaciente(pac1);
         
         Paciente pac2 = new Paciente("Mary Paciente");
-        Archivo.getInstancia().agregarPaciente(pac2);
+        ArchivoPacientes.getInstancia().agregarPaciente(pac2);
         
         Paciente pac3 = new Paciente("Elon Musk");
-        Archivo.getInstancia().agregarPaciente(pac3);
+        ArchivoPacientes.getInstancia().agregarPaciente(pac3);
         
         Paciente pac4 = new Paciente("Jessica Paciente");
-        Archivo.getInstancia().agregarPaciente(pac4);
+        ArchivoPacientes.getInstancia().agregarPaciente(pac4);
         
         Cita c1 = new Cita("02/05/2024", "09:00", 3001, 1001, "Consulta");
         med1.agregarCita(c1);

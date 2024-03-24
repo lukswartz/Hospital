@@ -1,4 +1,5 @@
 package personas;
+import modelo.*;
 /**
  * La clase EmpleadoPersonal representa a un empleado de la unidad Personal del Hospital. 
  * Todos estos empleados tienen un horario de trabajo fijo con turno de MAÑANA y de lunes a viernes. 

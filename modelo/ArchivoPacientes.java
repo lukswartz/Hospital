@@ -1,5 +1,6 @@
-package personas;
+package modelo;
 
+import personas.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,22 +10,22 @@ import java.util.List;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Archivo
+public class ArchivoPacientes
 {
     // instance variables - replace the example below with your own
-    private static Archivo pacientesHospital = null;
+    private static ArchivoPacientes pacientesHospital = null;
     private List<Paciente> pacientes;
     
-    private Archivo(){
+    private ArchivoPacientes(){
         
         pacientes = new ArrayList<>();
         
     }
     
-    public static Archivo getInstancia(){
+    public static ArchivoPacientes getInstancia(){
         
         if(pacientesHospital == null)
-            pacientesHospital = new Archivo();
+            pacientesHospital = new ArchivoPacientes();
         
             return pacientesHospital;
             

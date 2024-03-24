@@ -16,14 +16,14 @@ import java.util.Scanner;
 public class Hospital
 {
     private Plantilla plantilla;
-    private Archivo pacientes;
+    private ArchivoPacientes pacientes;
     IU iu; 
     
     
     public Hospital(){
         
         plantilla = Plantilla.getInstancia();
-        pacientes = Archivo.getInstancia();
+        pacientes = ArchivoPacientes.getInstancia();
         iniciar();
         iu = new IU();
         
