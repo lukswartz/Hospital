@@ -13,16 +13,18 @@ public class Medico extends Sanitario
     /**
      * Constructor for objects of class Medico
      */
-    public Medico(String nombre,String unidad, String turno, String especialidad)
+    public Medico(String nombre, String dni, String unidad, String turno, String especialidad)
     {
-        super(nombre, unidad, turno);
+        super(nombre, dni, unidad, turno);
         this.especialidad = especialidad;
     }
 
     public String getEspecialidad(){return especialidad;}
     
     public String toString(){
-        return super.toString()+ " Especialidad: " + especialidad + "\n";
+        return this.getClass().getSimpleName() + "\n" + super.toString() + 
+                " Especialidad: " + especialidad + "\n" +
+                "=======================================";
         
     }
 }

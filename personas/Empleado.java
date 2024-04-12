@@ -10,18 +10,20 @@ public abstract class Empleado extends Persona
 {
     // instance variables - replace the example below with your own
     private int idEmpleado;
-    
     private static int contadorEmpleados = 0;
+    private String unidad; 
+    private String turno; 
+    
     
 
     /**
      * Constructor de Empleado. Asigna el nombre, asigna un idEmpleado
-     * e inicializa la agenda con un ArrayList vacia. 
+     * 
      */
-    public Empleado(String nombre)
+    public Empleado(String nombre, String dni)
     {
         // initialise instance variables
-        super(nombre);
+        super(nombre, dni);
         contadorEmpleados++;
         idEmpleado = obtenerNuevoIdEmpleado();
         
@@ -31,10 +33,11 @@ public abstract class Empleado extends Persona
      * Constructor para indicar Ubicacion inicial y turno 
      * del empleado
      */
-    public Empleado(String nombre, String unidad, String turno)
+    public Empleado(String nombre, String dni, String unidad, String turno)
     {
-        // initialise instance variables
-        this(nombre);
+        this(nombre, dni);
+        this.unidad = unidad; 
+        this.turno = turno; 
         
     }
     
@@ -43,14 +46,30 @@ public abstract class Empleado extends Persona
      */
 
     public int getIdEmpleado(){ return idEmpleado;}
+    public String getUnidad() { return unidad; }
+    public String getTurno() { return turno; }
     
+    public void setUnidad(String unidad){this.unidad = unidad;}
+    public void setTurno(String turno) {this.turno = turno;}
+       
     
     public String toString(){
-        return "ID: " + idEmpleado + ".  Nombre: " + getNombre() + "." + "\n";
+        
+        return super.toString() + 
+               " ID: " + idEmpleado  + ". UNIDAD: " + getUnidad() + ". TURNO: " + getTurno() +  "\n";
         
     }
-    
+    /**
+     * Método privado que asigna un identificador único a cada Empleado. 
+     * Los identificadores de empleado empiezan por 1 para los sanitarios 
+     * y por 2 para los no sanitarios.
+     */
     private int obtenerNuevoIdEmpleado(){
-        return contadorEmpleados + 1000;
+        
+        if(this instanceof Medico || this instanceof Enfermero || this instanceof Fisio){
+            return contadorEmpleados + 1000;
+        }else{
+        return contadorEmpleados + 2000;
+        }
     }
 }

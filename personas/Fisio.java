@@ -9,12 +9,18 @@ package personas;
  */
 public class Fisio extends Sanitario
 {
-    public Fisio(String nombre, String unidad, String turno)
+     
+    
+    public Fisio(String nombre, String dni, String unidad, String turno)
     {
-        super(nombre, unidad, turno);
+        super(nombre, dni, unidad, turno);
+        
     }
 
     public String toString(){
-        return super.toString() + this.getClass().getName();
+        return this.getClass().getSimpleName() + 
+                super.toString() + 
+                "=======================================";
+                
     }
 }

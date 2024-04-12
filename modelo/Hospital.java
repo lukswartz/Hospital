@@ -5,8 +5,6 @@ import interfaz.*;
 import java.util.Scanner;
 
 
-
-
 /**
  * Write a description of class Hospital here.
  * 
@@ -15,53 +13,32 @@ import java.util.Scanner;
  */
 public class Hospital
 {
-    private Plantilla plantilla;
     private ArchivoPacientes pacientes;
-    IU iu; 
+    private Plantilla plantilla; 
+    private IU iu; 
     
-    
+        
     public Hospital(){
-        
-        plantilla = Plantilla.getInstancia();
-        pacientes = ArchivoPacientes.getInstancia();
-        iniciar();
-        iu = new IU();
-        
-        
-        
+      pacientes = ArchivoPacientes.getInstancia();
+       plantilla = Plantilla.getInstancia();
+       iu = new IU();
+       
+       
+       cargarDatosPrueba(); 
+       
+    
     }
     
     public void iniciar(){
-        Poblador p = new Poblador();
-        p.poblar();
-        
-        plantilla.imprimirPlantilla();
-        pacientes.imprimirArchivo();
-                
+        iu.menuPrincipal();
         
     }
-    
-    public void iniciarLoop(){
-        boolean finalizar = false;
-        
-        
-        
-        while(!finalizar){
-            Scanner entrada = new Scanner(System.in);
-            char opcion;
-            
-            iu.mostrarMenuPrincipal();
-            
-            opcion=entrada.next().charAt(0);
-            if(opcion == '5'){
-                System.out.println("Saliendo de la aplicación");
-                finalizar = true;
-            }else{
-                iu.irSubmenu(opcion);
-            }
-            
-        }
+
+    public void cargarDatosPrueba(){
+        GeneradorDatosIniciales g = new GeneradorDatosIniciales(); 
+        g.generar();
+        System.out.println(plantilla.empleadosEnSistemaComoString());
     }
     
-   
+    
 }

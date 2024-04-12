@@ -1,6 +1,6 @@
 package personas;
 import java.util.List;
-import modelo.Cita;
+//import modelo.Cita;
 import java.util.ArrayList;
 
 
@@ -11,36 +11,31 @@ import java.util.ArrayList;
  * @version (a version number or a date)
  */
 public abstract class Sanitario extends Empleado
-{
-    private String unidad;//lugar donde hace su actividad cada dia
-    private String turno;
-    private List<Cita> agenda; 
+{ 
+    private List<String> citasSanitario; // citas asignadas a este Sanitario
     
-    public Sanitario(String nombre, String unidad, String turno)
+    public Sanitario(String nombre, String dni, String unidad, String turno)
     {
-        super(nombre);
-        this.unidad = unidad;
-        this.turno = turno;
-        agenda = new ArrayList<>();
-    }
-    
-    public String getUnidad() {return unidad;}
-    public String getTurno() {return turno;}
-    
-    public void setUnidad (String unidad){ this.unidad = unidad;};
-    public void setTurno (String turno){ this.turno = turno;}
-    
-    public List<Cita> getAgenda(){
-        return agenda;
-    }
-    
-    public boolean agregarCita(Cita c){
+        super(nombre, dni, unidad, turno);
         
-        return agenda.add(c);
+         
+        citasSanitario = new ArrayList<>();
+    }
+    
+    
+    
+    public List<String> getCitas(){
+        return citasSanitario;
+    }
+    
+    
+    public boolean agregarCita(String cita){
+        
+        return citasSanitario.add(cita);
     }
     
     public String toString(){
-       return super.toString() + " Unidad: " + getUnidad() + "." + " Turno: " + getTurno() ;
+       return super.toString();
        
     }
 }

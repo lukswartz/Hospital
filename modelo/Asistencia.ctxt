@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Asistencia
+comment0.text=\r\n\ Clase\ Asistencia,\ representa\ el\ acto\ de\ asistir\ a\ un\ paciente\ por\ parte\ de\ un\ \r\n\ sanitario\ del\ hospital\ (Medico,\ Enfermero\ o\ Fisio)\r\n\ \r\n\ El\ constructor\ pide\:\ numero\ de\ id\ de\ paciente,\ nombre\ del\ profesional\ y\ una\ marca\ temporal.\ \r\n\ \r\n
+comment1.params=idPaciente\ profesional\ timeStamp
+comment1.target=Asistencia(int,\ java.lang.String,\ java.time.LocalDateTime)
+comment2.params=idPaciente\ profesional
+comment2.target=Asistencia(int,\ java.lang.String)
+comment3.params=informacionMedica\ diagnostico\ tratamiento
+comment3.target=void\ registrarInformacionAsistencia(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment4.params=
+comment4.target=java.lang.String\ toString()
+numComments=5

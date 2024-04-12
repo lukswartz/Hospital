@@ -1,4 +1,5 @@
 package interfaz;
+import java.util.Scanner;
 
 
 /**
@@ -9,17 +10,17 @@ package interfaz;
  */
 public class Menu
 {
-    private int numOpciones;
     private String titulo;
-    private String[] opciones;
+    private MenuItem[] opciones;
+    private Scanner entrada;
     
-    public Menu( String titulo, int numOpciones,String[] opciones){
+    public Menu( String titulo,MenuItem[] opciones){
         
-        this.numOpciones = numOpciones;
-        this.opciones = new String[numOpciones];
+        this.opciones = new MenuItem[opciones.length];
         this.titulo = titulo;
+        entrada = new Scanner(System.in);
         
-        for(int i=0; i<numOpciones; i++){
+        for(int i=0; i<opciones.length; i++){
             
             this.opciones[i] = opciones[i];
         }
@@ -30,11 +31,22 @@ public class Menu
         System.out.println("=========================================");
         System.out.println("MENU: " + titulo);
         System.out.println("=========================================");
-        for(int i=0; i<numOpciones; i++){
-            System.out.println("  " + (i+1) + " " + opciones[i] + ". ");
+        for(int i=0; i<opciones.length; i++){
+            System.out.println("  " + (i+1) + " " + opciones[i].getEtiqueta() + ". ");
         }
         System.out.println("Indique el número de opción");
         
         
+    }
+    
+    public int obtenerOpcionUsuario(){
+        int numeroOpciones = this.getOpciones().length; 
+        System.out.println("Opciones posibles: [1-" + numeroOpciones+"]");
+        
+        return  entrada.nextInt();
+    }
+    
+    public MenuItem[] getOpciones(){
+        return opciones; 
     }
 }

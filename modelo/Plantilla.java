@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 /**
  * Write a description of class Plantilla here.
- * 
+ * Almacena todos los objetos empleados. 
  * @author (your name) 
  * @version (a version number or a date)
  */
@@ -15,6 +15,8 @@ public class Plantilla
 {
     private static Plantilla plantillaHospital = null;
     private List<Empleado> empleados;
+    
+    
     
     private Plantilla(){
         
@@ -31,6 +33,41 @@ public class Plantilla
         return plantillaHospital;
     }
     
+    
+    //METODOS DEL OBJETO PLANTILLA 
+    
+    public Empleado obtenerEmpleadoPorId(int id){
+        for(Empleado e: empleados){
+            if(e.getIdEmpleado() == id){
+                return e; 
+            }
+        }
+        
+        return null; 
+    }
+    
+    public void mostrarEmpleadosAdmin(){
+        System.out.println("Mostrando empleados de administración existentes en el sistema...");
+        for(Empleado e: empleados){
+            if(e instanceof EmpleadoAdministracion){
+                
+                System.out.println("Nombre: " + e.getNombre() + " ID: " + e.getIdEmpleado());
+            }
+        }
+    }
+    public EmpleadoAdministracion obtenerAdmin(int id){
+        
+        for(Empleado e: empleados){
+            if(e.getIdEmpleado() == id){
+                return (EmpleadoAdministracion)e; 
+            }
+        }
+        
+        return null; 
+        
+    }
+    
+    
     public boolean agregarEmpleado(Empleado e){
         
         return empleados.add(e);
@@ -39,6 +76,7 @@ public class Plantilla
     }
     
     public void eliminarEmpleado(int idEmpleado){
+        
         Iterator<Empleado> it = empleados.iterator();
         while(it.hasNext()){
             Empleado e = it.next(); 
@@ -76,6 +114,48 @@ public class Plantilla
             return sanitarios;
         }
         
+        public Sanitario buscarSanitarioPorID(int idEmpleado){
+            
+                int index = 0; 
+                List<Sanitario> lista = getSanitarios(); 
+                                
+                while(index< lista.size()){
+                
+                    Sanitario s = lista.get(index); 
+                        
+                    if(idEmpleado==s.getIdEmpleado()){
+                    
+                        if(s instanceof Medico){
+                        
+                            return (Medico)s; 
+                        }else if(s instanceof Enfermero){
+                            return (Enfermero)s; 
+                        }else if(s instanceof Fisio){
+                            return (Fisio)s; 
+                        }
+                    }
+                    index++;
+            }
+            
+            
+            return null; 
+            
+        }
+        
+        
+    public String empleadosEnSistemaComoString(){
+        StringBuilder listado = new StringBuilder("****LISTADO DE EMPLEADOS ALMACENADOS EN EL SISTEMA*****\n");
+        for(Empleado e: empleados){
+            listado.append("Id: " + e.getIdEmpleado() + 
+                           ". Nombre: " +  e.getNombre() +
+                           ". Categoria: " +  e.getClass().getSimpleName()+"\n"
+                            );
+                                                                  
+        }
+        
+        return listado.toString();
+    }
+    
     public void imprimirPlantilla(){
         if(empleados.isEmpty()){
             System.out.println("No hay empleados en el sistema");
@@ -83,11 +163,11 @@ public class Plantilla
         for(Empleado e: empleados){
             
             System.out.println(e.toString());
-            // String clase = e.getClass().toString();
-            // System.out.println(e.getIdEmpleado()+ " " + e.getNombre() + " " + clase.substring(15,clase.length()));
+            
         }
     }
     
+   
 }
     
    

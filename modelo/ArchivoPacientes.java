@@ -33,15 +33,39 @@ public class ArchivoPacientes
     
     public boolean agregarPaciente(Paciente p){
         
-        return pacientes.add(p);
+        boolean op= pacientes.add(p);
+        if(op){
+            System.out.println("Paciente agregado al archivo"); 
+        }else{
+            System.out.println("No se ha podido agregar el paciente"); 
+        }
+        
+        return op; 
+        
         
     }
     
+    public Paciente buscarPacientePorId(int idPaciente){
+          
+        int index = 0; 
+        
+        while(index<pacientes.size()){
+        
+            Paciente p=pacientes.get(index);
+            if(idPaciente == p.getIdPaciente()){
+               return p; 
+            }
+            index++;
+        }
+        
+        return null; 
+        
+    }
     public void imprimirArchivo(){
         
         if(!pacientes.isEmpty()){
         for(Paciente p: pacientes){
-            System.out.println(p.getDetails());
+            System.out.println(p);
         }
         }else{
             System.out.println("No hay ningun paciente en el sistema");
