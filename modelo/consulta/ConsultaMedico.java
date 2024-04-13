@@ -12,20 +12,19 @@ import java.time.LocalDate;
  */
 public class ConsultaMedico extends Consulta
 {
-    private Medico medico; 
     
     
     
     public ConsultaMedico(Medico m, int dia, int mes, int anyo)
     {
-       super(dia, mes, anyo);
-       this.medico = m; 
+       super(m, dia, mes, anyo); 
        
     }
 
+    
     public String especialidad(){
         
-        return medico.getEspecialidad();
+        return super.especialidad();
     }
     
 }

@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=ConsultasProgramadas
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ ConsultasProgramadas\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=ConsultasProgramadas()
+comment2.params=tipo\ s\ dia\ mes\ anyo
+comment2.target=boolean\ crearNuevaConsulta(java.lang.String,\ personas.Sanitario,\ int,\ int,\ int)
+comment3.params=s\ dia\ mes\ anyo
+comment3.target=boolean\ sanitarioTieneConsultaProgramada(personas.Sanitario,\ int,\ int,\ int)
+numComments=4

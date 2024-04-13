@@ -27,25 +27,25 @@ public class GeneradorDatosIniciales
         Plantilla.getInstancia().agregarEmpleado(emp1);
         
         //AGREGAR MEDICOS 
-        Medico med1 = new Medico("Federico Medico", "12345678A", "Consulta", "Mañana", "Traumatologia");
+        Medico med1 = new Medico("Federico Medico", "12345678A","Traumatologia", "Consulta", "Mañana" );
         Plantilla.getInstancia().agregarEmpleado(med1);
         
-        Medico med2= new Medico("Maria Medico", "98765432B", "Consulta", "Tarde", "Cardiologia");
+        Medico med2= new Medico("Maria Medico", "98765432B", "Cardiologia", "Consulta", "Tarde");
         Plantilla.getInstancia().agregarEmpleado(med2);
         
-        Medico med3 = new Medico("Francisco Medico","56789123C", "Sala", "Mañana", "Cirugia" );
+        Medico med3 = new Medico("Francisco Medico","56789123C", "Cirugia", "Sala", "Mañana" );
         Plantilla.getInstancia().agregarEmpleado(med3);
         
-        Medico med4 = new Medico("Elisa Medico","87654321D", "Quirofano", "Mañana", "Traumatologia" );
+        Medico med4 = new Medico("Elisa Medico","87654321D","Traumatologia", "Quirofano", "Mañana" );
         Plantilla.getInstancia().agregarEmpleado(med4);
         
-        Medico med5 = new Medico("Carmen Medico", "23686363F", "Consulta", "Mañana", "Digestivo");
+        Medico med5 = new Medico("Carmen Medico", "23686363F",  "Digestivo", "Consulta", "Mañana");
         Plantilla.getInstancia().agregarEmpleado(med5);
         
-        Enfermero enf1 = new Enfermero("Paco Enfermero","23456789E", "Consulta", "Tarde");
+        Enfermero enf1 = new Enfermero("Paco Enfermero","23456789E", "Enfermeria",  "Consulta", "Tarde");
         Plantilla.getInstancia().agregarEmpleado(enf1);
         
-        Fisio fisio1 = new Fisio("Miguel Fisio", "34567890F",  "Consulta", "Mañana");
+        Fisio fisio1 = new Fisio("Miguel Fisio", "34567890F", "Fisioterapia",  "Consulta", "Mañana");
         Plantilla.getInstancia().agregarEmpleado(fisio1);
         
         //AGREGAR PACIENTES DE PRUEBA

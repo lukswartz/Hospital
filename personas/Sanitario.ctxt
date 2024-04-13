@@ -1,12 +1,10 @@
 #BlueJ class context
 comment0.target=Sanitario
 comment0.text=\r\n\ Un\ empleado\ de\ tipo\ Sanitario\ tiene\ una\ lista\ de\ Citas\ para\ cada\ dia\ de\ trabajo.\ \r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=nombre\ dni\ unidad\ turno
-comment1.target=Sanitario(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+comment1.params=nombre\ dni\ especialidad\ unidad\ turno
+comment1.target=Sanitario(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
 comment2.params=
-comment2.target=java.util.List\ getCitas()
-comment3.params=cita
-comment3.target=boolean\ agregarCita(java.lang.String)
-comment4.params=
-comment4.target=java.lang.String\ toString()
-numComments=5
+comment2.target=java.lang.String\ especialidad()
+comment3.params=
+comment3.target=java.lang.String\ toString()
+numComments=4

@@ -8,26 +8,27 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
- * The test class ConsultaMedicoTest.
+ * The test class ConsultasProgramadasTest.
  *
  * @author  (your name)
  * @version (a version number or a date)
  */
-public class ConsultaMedicoTest
+public class ConsultasProgramadasTest
 {
-    
     Medico med;
-    ConsultaMedico c; 
-    Paciente p1; 
+    ConsultaMedico c;
+    Paciente p1;
+    ConsultasProgramadas cp;
+
     /**
-     * Default constructor for test class ConsultaMedicoTest
+     * Default constructor for test class ConsultasProgramadasTest
      */
-    public ConsultaMedicoTest()
+    public ConsultasProgramadasTest()
     {
         med = new Medico("Juan Medico", "234234S","Traumatologia",  "Consulta", "Mañana");
         c = new ConsultaMedico(med, 9, 4, 2024);
         p1 = new Paciente("Francisco Paciente", "4324789A");
-        
+        cp = new ConsultasProgramadas();
     }
 
     /**
@@ -38,6 +39,7 @@ public class ConsultaMedicoTest
     @BeforeEach
     public void setUp()
     {
+        
     }
 
     /**

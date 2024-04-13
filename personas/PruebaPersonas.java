@@ -21,10 +21,10 @@ public class PruebaPersonas
        
        
        
-       Medico med = new Medico("Carmen Medico", "234234", "Hospitalizacion", "Tarde", "Digestivo");
+       Medico med = new Medico("Carmen Medico", "234234", "Digestivo", "Hospitalizacion", "Tarde");
        System.out.println(med.toString());
        
-       Enfermero enf = new Enfermero("Ana Enfermeria", "22344536", "Consultas", "Mañana");
+       Enfermero enf = new Enfermero("Ana Enfermeria", "22344536", "Enfermeria", "Consultas", "Mañana");
        System.out.println(enf.toString());
        
        Estudiante est = new Estudiante("Nico Estudiante", "14234234", med);

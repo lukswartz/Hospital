@@ -12,27 +12,22 @@ import java.util.ArrayList;
  */
 public abstract class Sanitario extends Empleado
 { 
+    private String especialidad; 
     private List<String> citasSanitario; // citas asignadas a este Sanitario
     
-    public Sanitario(String nombre, String dni, String unidad, String turno)
+    public Sanitario(String nombre, String dni,String especialidad, String unidad, String turno)
     {
         super(nombre, dni, unidad, turno);
-        
+    
+        this.especialidad = especialidad; 
          
         citasSanitario = new ArrayList<>();
     }
     
     
-    
-    public List<String> getCitas(){
-        return citasSanitario;
-    }
-    
-    
-    public boolean agregarCita(String cita){
-        
-        return citasSanitario.add(cita);
-    }
+    public String especialidad(){
+        return especialidad;
+    };
     
     public String toString(){
        return super.toString();

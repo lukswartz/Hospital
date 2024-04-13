@@ -7,23 +7,22 @@ package personas;
  */
 public class Medico extends Sanitario
 {
-    private String especialidad;
-    
+        
 
     /**
      * Constructor for objects of class Medico
      */
-    public Medico(String nombre, String dni, String unidad, String turno, String especialidad)
+    public Medico(String nombre, String dni,String especialidad, String unidad, String turno)
     {
-        super(nombre, dni, unidad, turno);
-        this.especialidad = especialidad;
+        super(nombre, dni, especialidad, unidad, turno);
     }
 
-    public String getEspecialidad(){return especialidad;}
+    public String especialidad(){return super.especialidad();}
+    
     
     public String toString(){
         return this.getClass().getSimpleName() + "\n" + super.toString() + 
-                " Especialidad: " + especialidad + "\n" +
+                " Especialidad: " + especialidad() + "\n" +
                 "=======================================";
         
     }

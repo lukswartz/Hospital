@@ -12,14 +12,15 @@ public class Enfermero extends Sanitario
     // instance variables - replace the example below with your own
     
     
-    public Enfermero(String nombre, String dni,  String unidad, String turno)
+    public Enfermero(String nombre, String dni,String especialidad, String unidad, String turno)
     {
-        super(nombre, dni, unidad, turno);
+        super(nombre, dni, especialidad, unidad, turno);
     }
 
     public String toString(){
-        return this.getClass().getSimpleName() + "\n" +
-                super.toString() + 
+        return   this.getClass().getSimpleName() + "\n" +
+                super.toString() +
+                "Especialidad: " + super.especialidad() + "\n" +  
                 "=======================================";
                 
     }
