@@ -15,7 +15,7 @@ import java.time.format.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public abstract class Consulta
+public class Consulta
 {
     //CONSTANTES DE CLASE. TODAS LAS CONSULTAS TENDRÁN ESTOS ATRIBUTOS. 
     private static final LocalTime HORA_COMIENZO = LocalTime.of(8,30);
@@ -23,18 +23,17 @@ public abstract class Consulta
     private static final Duration MINUTOS_POR_PACIENTE = Duration.ofMinutes(60);
     private static final int NUMERO_HUECOS = (int) Duration.between(HORA_COMIENZO,HORA_FINAL).dividedBy(MINUTOS_POR_PACIENTE);
     
-    private Sanitario sanitario; 
     private LocalDate fecha; 
     private Paciente[] pacientes; 
     
     
 
-    public Consulta(Sanitario sanitario, int dia, int mes, int anyo){
-        this(sanitario, LocalDate.of(anyo, mes, dia));
+    public Consulta(int dia, int mes, int anyo){
+        this(LocalDate.of(anyo, mes, dia));
         
     }
-    public Consulta(Sanitario sanitario, LocalDate fecha){
-        this.sanitario = sanitario;
+    public Consulta(LocalDate fecha){
+       
         this.fecha = fecha;
         pacientes = new Paciente[NUMERO_HUECOS];
         
@@ -50,16 +49,6 @@ public abstract class Consulta
         return fecha; 
     }
     
-    public Sanitario sanitario(){
-        return sanitario; 
-    }
-    
-    /**
-     * método que deveuelve la especialidad del sanitario
-     */
-    public String especialidad(){
-        return sanitario.especialidad();
-    };
     
     
     /**
@@ -107,18 +96,17 @@ public abstract class Consulta
     
     public void imprimirListaPacientes(){
         
-    String res = ""; 
-        
+        String res = fecha().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
         
         for(int i=0; i<pacientes.length; i++){
             if(pacientes[i]!=null){
                 
                 LocalTime hora= HORA_COMIENZO.plusMinutes(MINUTOS_POR_PACIENTE.toMinutes()*i);
-                res+="Paciente: " + pacientes[i].getNombre() + " Hora: " +  hora.toString() + "\n";
+                res+="\nPaciente: " + pacientes[i].getNombre() + " Hora: " +  hora.toString() + "\n";
                 
             }
         }
         
-    System.out.println(res);
+        System.out.println(res);
     }
 }

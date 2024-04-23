@@ -34,6 +34,9 @@ public class Plantilla
     }
     
     
+    public List<Empleado> empleados(){
+        return empleados;
+    }
     //METODOS DEL OBJETO PLANTILLA 
     
     public Empleado obtenerEmpleadoPorId(int id){
@@ -103,44 +106,6 @@ public class Plantilla
         return null;
     }
     
-    public List<Sanitario> getSanitarios(){
-        List<Sanitario> sanitarios= new ArrayList<>();
-        
-        for(Empleado e : empleados){
-            if(e instanceof Medico || e instanceof Enfermero || e instanceof Fisio){
-                sanitarios.add((Sanitario)e);
-                }
-            }
-            return sanitarios;
-        }
-        
-        public Sanitario buscarSanitarioPorID(int idEmpleado){
-            
-                int index = 0; 
-                List<Sanitario> lista = getSanitarios(); 
-                                
-                while(index< lista.size()){
-                
-                    Sanitario s = lista.get(index); 
-                        
-                    if(idEmpleado==s.getIdEmpleado()){
-                    
-                        if(s instanceof Medico){
-                        
-                            return (Medico)s; 
-                        }else if(s instanceof Enfermero){
-                            return (Enfermero)s; 
-                        }else if(s instanceof Fisio){
-                            return (Fisio)s; 
-                        }
-                    }
-                    index++;
-            }
-            
-            
-            return null; 
-            
-        }
         
         
     public String empleadosEnSistemaComoString(){
@@ -163,6 +128,7 @@ public class Plantilla
         for(Empleado e: empleados){
             
             System.out.println(e.toString());
+            e.imprimirAsignaciones();
             
         }
     }

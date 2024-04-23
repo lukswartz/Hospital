@@ -1,5 +1,5 @@
-package modelo.consulta;
-import personas.*;
+package personas;
+
 
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -8,28 +8,25 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
- * The test class ConsultasProgramadasTest.
+ * The test class AsignacionTest.
  *
  * @author  (your name)
  * @version (a version number or a date)
  */
-public class ConsultasProgramadasTest
+public class AsignacionTest
 {
-    Medico med;
-    ConsultaMedico c;
-    Paciente p1;
-    ConsultasProgramadas cp;
-
+    
+    Asignacion a; 
     /**
-     * Default constructor for test class ConsultasProgramadasTest
+     * Default constructor for test class AsignacionTest
      */
-    public ConsultasProgramadasTest()
+    public AsignacionTest()
     {
-        med = new Medico("Juan Medico", "234234S","Traumatologia",  "Consulta", "Mañana");
-        c = new ConsultaMedico(med, 9, 4, 2024);
-        p1 = new Paciente("Francisco Paciente", "4324789A");
-        cp = new ConsultasProgramadas();
+        a = new Asignacion("Consulta", "Mañana", 27,4,2024,5,5,2024);
+        a.printAsignacion();
+
     }
+    
 
     /**
      * Sets up the test fixture.
@@ -39,7 +36,6 @@ public class ConsultasProgramadasTest
     @BeforeEach
     public void setUp()
     {
-        
     }
 
     /**

@@ -58,7 +58,7 @@ public class PlantillaTest
     @Test
     public void agregarUnEmpleado()
     {
-        assertEquals(true, p.agregarEmpleado(new personas.Medico("Juan Medico", "45234890S", "Consulta", "Mañana", "Traumatologia")));
+        assertEquals(true, p.agregarEmpleado(new personas.Medico("Juan Medico", "45234890S", "Traumatologia")));
     }
 }
 

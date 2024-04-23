@@ -1,4 +1,7 @@
 package personas;
+import java.util.List;
+import java.util.ArrayList;
+import java.time.LocalDate;
 
 /**
  * Write a description of class Empleado here.
@@ -11,8 +14,7 @@ public abstract class Empleado extends Persona
     // instance variables - replace the example below with your own
     private int idEmpleado;
     private static int contadorEmpleados = 0;
-    private String unidad; 
-    private String turno; 
+    private List<Asignacion> turnos; //lista con los turnos asignados al empleado
     
     
 
@@ -24,39 +26,76 @@ public abstract class Empleado extends Persona
     {
         // initialise instance variables
         super(nombre, dni);
+        turnos = new ArrayList<>();
         contadorEmpleados++;
         idEmpleado = obtenerNuevoIdEmpleado();
         
     }
     
-    /**
-     * Constructor para indicar Ubicacion inicial y turno 
-     * del empleado
-     */
-    public Empleado(String nombre, String dni, String unidad, String turno)
-    {
-        this(nombre, dni);
-        this.unidad = unidad; 
-        this.turno = turno; 
-        
-    }
+
     
     /*
      * Métodos geters y seters
      */
 
     public int getIdEmpleado(){ return idEmpleado;}
-    public String getUnidad() { return unidad; }
-    public String getTurno() { return turno; }
     
-    public void setUnidad(String unidad){this.unidad = unidad;}
-    public void setTurno(String turno) {this.turno = turno;}
-       
+
+    public List<Asignacion> turnos(){
+        return turnos; 
+    }
     
+    /**
+     * agrega a la lista de turnos del empleado una nueva asignación. 
+     */
+    public void asignarTurno(Asignacion a){
+        turnos.add(a);
+    }
+    
+    
+    
+    /**
+     * Método que recorre la lista de asignaciones y comprueba si en la fecha
+     * pasada por parámetro el empleado está en la unidad pasada por parámetro. 
+     */
+    public boolean enUnidadPorFecha(String unidad, int dia, int mes, int anyo){
+        LocalDate fecha = LocalDate.of(anyo, mes, dia);
+        
+        for(Asignacion a: turnos){
+            
+            if(!fecha.isBefore(a.getFechaInicio()) && 
+                !fecha.isAfter(a.getFechaFin()) &&
+                unidad.equalsIgnoreCase(a.unidad())
+              ){
+                return true;
+               }
+        }
+        
+        return false; 
+    }
+   
+    
+    public void imprimirAsignaciones(){
+        
+        System.out.println("Lista de turnos asignados a: " + this.getNombre());
+        
+        LocalDate hoy = LocalDate.now();
+        
+        
+        
+        if(turnos.isEmpty()){
+            System.out.println("El empleado no tiene turnos asignados");
+        }else{
+        
+            for(Asignacion a: turnos){
+                a.printAsignacion();
+            }
+        }
+    }
     public String toString(){
         
         return super.toString() + 
-               " ID: " + idEmpleado  + ". UNIDAD: " + getUnidad() + ". TURNO: " + getTurno() +  "\n";
+               " ID: " + idEmpleado  +  "\n";
         
     }
     /**

@@ -1,5 +1,5 @@
 package personas;
-import modelo.*;
+import modelo.asistencia.*;
 import java.util.ArrayList;
 import java.util.List;
 

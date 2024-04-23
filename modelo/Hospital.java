@@ -26,6 +26,7 @@ public class Hospital
        
        cargarDatosPrueba(); 
        
+
     
     }
     
@@ -38,6 +39,9 @@ public class Hospital
         GeneradorDatosIniciales g = new GeneradorDatosIniciales(); 
         g.generar();
         System.out.println(plantilla.empleadosEnSistemaComoString());
+        for(Empleado e : plantilla.empleados()){
+            e.imprimirAsignaciones();            
+        }
     }
     
     

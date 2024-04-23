@@ -10,9 +10,14 @@ import personas.*;
  */
 public class ConsultaEnfermeria extends Consulta
 {
-     public ConsultaEnfermeria(Enfermero e, int dia, int mes, int anyo)
+    
+    private Enfermero enfermero; 
+    
+     public ConsultaEnfermeria(Enfermero enfermero, int dia, int mes, int anyo)
     {
-       super(e, dia, mes, anyo); 
+        super(dia, mes, anyo);
+        this.enfermero = enfermero;
+        
        
     }
     

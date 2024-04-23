@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=SanitariosEnPlantilla
+comment0.text=\r\n\ Clase\ que\ extrae\ respectivas\ listas\ de\ Sanitarios\ presentes\r\n\ en\ el\ objeto\ plantilla.\ \r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=SanitariosEnPlantilla()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ SanitariosEnPlantilla\r\n
+comment2.params=
+comment2.target=java.util.List\ medicos()
+comment3.params=dia\ mes\ anyo
+comment3.target=java.util.List\ medicosEnConsultaPorFecha(int,\ int,\ int)
+comment4.params=
+comment4.target=java.util.List\ enfermeros()
+numComments=5

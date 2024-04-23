@@ -1,7 +1,7 @@
 package personas;
 import java.util.List;
-//import modelo.Cita;
 import java.util.ArrayList;
+import java.time.LocalDate;
 
 
 /**
@@ -12,17 +12,21 @@ import java.util.ArrayList;
  */
 public abstract class Sanitario extends Empleado
 { 
+    
     private String especialidad; 
     private List<String> citasSanitario; // citas asignadas a este Sanitario
     
-    public Sanitario(String nombre, String dni,String especialidad, String unidad, String turno)
+    public Sanitario(String nombre, String dni,String especialidad)
     {
-        super(nombre, dni, unidad, turno);
+        super(nombre, dni);
     
         this.especialidad = especialidad; 
          
         citasSanitario = new ArrayList<>();
     }
+    
+    
+    
     
     
     public String especialidad(){

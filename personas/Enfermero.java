@@ -12,9 +12,9 @@ public class Enfermero extends Sanitario
     // instance variables - replace the example below with your own
     
     
-    public Enfermero(String nombre, String dni,String especialidad, String unidad, String turno)
+    public Enfermero(String nombre, String dni,String especialidad)
     {
-        super(nombre, dni, especialidad, unidad, turno);
+        super(nombre, dni, especialidad);
     }
 
     public String toString(){

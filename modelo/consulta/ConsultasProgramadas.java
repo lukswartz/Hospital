@@ -15,7 +15,7 @@ import personas.*;
  */
 public class ConsultasProgramadas
 {
-   private List<Consulta> consultas; 
+   private List<ConsultaMedico> consultas; 
    
    public ConsultasProgramadas(){
        consultas = new ArrayList<>();
@@ -25,28 +25,29 @@ public class ConsultasProgramadas
    /**
     * método que crea una nueva consulta programada con un profesional Sanitario y la almacena en una lista de consultas
     * 
-    * @param: String tipo: tipo de consulta: "Medico", "Enfermeria", "Fisioterapia"
-    *         Sanitario s: objeto de tipo sanitario del tipo adecuado a la consulta
+    * 
     *        
     * @return: 
     */
-   public boolean crearNuevaConsulta(String tipo, Sanitario s, int dia, int mes, int anyo) {
+   public boolean crearNuevaConsulta(Medico m, int dia, int mes, int anyo) {
        
-       if(sanitarioTieneConsultaProgramada(s,dia,mes,anyo)){
+       if(medicoTieneConsultaProgramada(m,dia,mes,anyo)){
            return false; 
        }
        
-       Consulta c= ConsultaFactory.nuevaConsulta(tipo, s, dia, mes, anyo);
+       ConsultaMedico c = new ConsultaMedico(m, dia, mes, anyo);
        
        return consultas.add(c);
        
    }
    
-   private boolean sanitarioTieneConsultaProgramada(Sanitario s, int dia, int mes, int anyo){
+   private boolean medicoTieneConsultaProgramada(Medico m, int dia, int mes, int anyo){
        
-       for(Consulta c: consultas){
+       if (consultas.isEmpty()) return false; 
+       
+       for(ConsultaMedico c: consultas){
            
-           if(c.sanitario() == s && c.fecha().equals(LocalDate.of(anyo, mes, dia) ) ){
+           if(c.medico() == m && c.fecha().equals(LocalDate.of(anyo, mes, dia) ) ){
               return true;
            }
            
@@ -56,4 +57,9 @@ public class ConsultasProgramadas
        
    }
    
+   public void mostrarConsultasProgramadas(){
+       for(Consulta c: consultas){
+           c.imprimirListaPacientes();
+       }
+   }
 }

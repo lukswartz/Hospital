@@ -12,9 +12,9 @@ public class Medico extends Sanitario
     /**
      * Constructor for objects of class Medico
      */
-    public Medico(String nombre, String dni,String especialidad, String unidad, String turno)
+    public Medico(String nombre, String dni,String especialidad)
     {
-        super(nombre, dni, especialidad, unidad, turno);
+        super(nombre, dni, especialidad);
     }
 
     public String especialidad(){return super.especialidad();}

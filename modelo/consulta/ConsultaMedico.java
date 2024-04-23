@@ -13,18 +13,28 @@ import java.time.LocalDate;
 public class ConsultaMedico extends Consulta
 {
     
+    private Medico medico; 
     
     
-    public ConsultaMedico(Medico m, int dia, int mes, int anyo)
+    public ConsultaMedico(Medico medico, int dia, int mes, int anyo)
     {
-       super(m, dia, mes, anyo); 
+       super(dia, mes, anyo); 
+       this.medico = medico; 
        
     }
 
-    
+    public Medico medico(){
+        return medico; 
+    }
     public String especialidad(){
         
-        return super.especialidad();
+        return medico.especialidad();
     }
     
+    
+    public void imprimirListaPacientes(){
+        
+        System.out.println("Consulta: Sanitario: " + medico.getNombre() + " Especialidad: " + medico.especialidad());
+        super.imprimirListaPacientes();
+    }
 }

@@ -59,8 +59,7 @@ public class IU
                            {new MenuItem("Agregar nuevo empleado",()->agregarEmpleado()), 
                             new MenuItem("Eliminar empleado",()->eliminarEmpleado()), 
                             new MenuItem("Editar empleado",()->System.out.println("editarEmpleado")), 
-                            new MenuItem("Asignar Unidad a Empleado",()->System.out.println("asignarUnidad()")),
-                            new MenuItem("Asignar turno a Empleado", ()->System.out.println("asignarTurno()")),
+                            new MenuItem("Asignar turno a Empleado", ()->asignarTurno()),
                             new MenuItem("Imprimir listado Empleados", ()->{
                                                                             p.imprimirPlantilla();
                                                                             menuAdministracion();
@@ -111,19 +110,19 @@ public class IU
                 break; 
             
             case 2: 
-                System.out.println("Indique: nombre,DNI,Unidad,Turno,Especialidad del nuevo empleado Medicina (separe por una coma cada dato)"); 
+                System.out.println("Indique: nombre,DNI,Especialidad del nuevo empleado Medicina (separe por una coma cada dato)"); 
                 parametros = parametrosUsuario();
-                p.agregarEmpleado(new Medico(parametros[0], parametros[1], parametros[2], parametros[3], parametros[4]));
+                p.agregarEmpleado(new Medico(parametros[0], parametros[1], parametros[2]));
                 break; 
             case 3: 
-                System.out.println("Indique: nombre,DNI,Unidad,Turno del nuevo empleado Enfermeria (separe por una coma cada dato)");
+                System.out.println("Indique: nombre,DNI,Especialidad del nuevo empleado Enfermeria (separe por una coma cada dato)");
                 parametros = parametrosUsuario();
-                p.agregarEmpleado(new Enfermero(parametros[0], parametros[1], parametros[2], parametros[3]));
+                p.agregarEmpleado(new Enfermero(parametros[0], parametros[1], parametros[2]));
                 break; 
             case 4: 
-                System.out.println("Indique: nombre,DNI,Unidad,Turno del nuevo Fisio (separe por una coma cada dato sin dejar espacios)"); 
+                System.out.println("Indique: nombre,DNI,Especialidad del nuevo Fisio (separe por una coma cada dato sin dejar espacios)"); 
                 parametros = parametrosUsuario();
-                p.agregarEmpleado(new Fisio(parametros[0], parametros[1], parametros[2], parametros[3]));
+                p.agregarEmpleado(new Fisio(parametros[0], parametros[1], parametros[2]));
                 break; 
             
             case 0:
@@ -161,6 +160,47 @@ public class IU
         
         
                
+        
+    }
+    
+    private void asignarTurno(){
+        
+        String[] parametros;
+        
+        System.out.println("MENU ASIGNAR TURNO A EMPLEADO");
+        System.out.println("Indique el ID del empleado al que desea asignar turno (se muestra el listado de empleados existentes)");
+        p.imprimirPlantilla();
+        int opcion = entrada.nextInt();
+        Empleado e = p.obtenerEmpleadoPorId(opcion);
+        
+        System.out.println("El empleado con ID: " + e.getIdEmpleado() + " DNI: " + e.getDNI() + " NOMBRE: " + e.getNombre() + "\n" + 
+                            "està seleccionado");
+        //entrada.nextLine(); 
+        
+        System.out.println("Indique la Unidad, el turno, la fecha de inicio y fecha de fin. (separe por una coma cada dato sin dejar espacios) ");
+        parametros = parametrosUsuario();
+        
+        Asignacion a; 
+        if(parametros.length==8){
+                    a = new Asignacion(parametros[0], parametros[1], 
+                                                  Integer.valueOf(parametros[2]), Integer.valueOf(parametros[3]), Integer.valueOf(parametros[4]), 
+                                                  Integer.valueOf(parametros[5]), Integer.valueOf(parametros[6]), Integer.valueOf(parametros[7])
+                                                  );
+                }else{
+                    a = new Asignacion(parametros[0], parametros[1], 
+                                                  Integer.valueOf(parametros[2]), Integer.valueOf(parametros[3]), Integer.valueOf(parametros[4]) 
+                                                  );
+                    
+                }
+                
+        e.asignarTurno(a);
+        
+        System.out.println("Turno asignado al empleado");
+        
+        menuAdministracion();
+        
+        
+        
         
     }
     private String[] parametrosUsuario(){

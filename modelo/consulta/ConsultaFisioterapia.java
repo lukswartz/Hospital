@@ -11,9 +11,13 @@ import personas.*;
 public class ConsultaFisioterapia extends Consulta
 {
     // instance variables - replace the example below with your own
+    private Fisio fisio; 
+    
      public ConsultaFisioterapia(Fisio f, int dia, int mes, int anyo)
     {
-       super(f, dia, mes, anyo); 
+       super(dia, mes, anyo); 
+       
+       this.fisio = f; 
        
     }
 }

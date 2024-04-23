@@ -18,7 +18,7 @@ public class ConsultaMedicoTest
     
     Medico med;
     ConsultaMedico c; 
-    Paciente p1; 
+    Paciente p1,p2,p3,p4; 
     /**
      * Default constructor for test class ConsultaMedicoTest
      */
@@ -27,7 +27,13 @@ public class ConsultaMedicoTest
         med = new Medico("Juan Medico", "234234S","Traumatologia",  "Consulta", "Mañana");
         c = new ConsultaMedico(med, 9, 4, 2024);
         p1 = new Paciente("Francisco Paciente", "4324789A");
+        p2 = new Paciente("Lucas Paciente", "4324789A");
+        p3 = new Paciente("Maria Paciente", "2342349A");
+        p4 = new Paciente("Elena Paciente", "43434289A");
         
+        c.asignarHora(p1);
+        c.asignarHora(p2);
+        c.asignarHora(p3);
     }
 
     /**

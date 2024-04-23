@@ -11,9 +11,9 @@ public class Fisio extends Sanitario
 {
      
     
-    public Fisio(String nombre, String dni, String especialidad,  String unidad, String turno)
+    public Fisio(String nombre, String dni, String especialidad)
     {
-        super(nombre, dni, especialidad, unidad, turno);
+        super(nombre, dni, especialidad);
         
     }
 

@@ -27,25 +27,34 @@ public class GeneradorDatosIniciales
         Plantilla.getInstancia().agregarEmpleado(emp1);
         
         //AGREGAR MEDICOS 
-        Medico med1 = new Medico("Federico Medico", "12345678A","Traumatologia", "Consulta", "Mañana" );
+        Medico med1 = new Medico("Trauma1", "12345678A","Traumatologia");
+        med1.asignarTurno(new Asignacion("Consulta", "Mañana", 17,4,2024, 19,4,2024));
+        med1.asignarTurno(new Asignacion("Consulta", "Tarde", 22,4,2024, 26,4,2024));
+        med1.asignarTurno(new Asignacion("Urgencias", "Noche", 27, 4, 2024));
         Plantilla.getInstancia().agregarEmpleado(med1);
         
-        Medico med2= new Medico("Maria Medico", "98765432B", "Cardiologia", "Consulta", "Tarde");
+        Medico med2= new Medico("Trauma2", "98765432B", "Traumatologia");
+        med2.asignarTurno(new Asignacion("Consulta", "Mañana", 17,4,2024, 19,4,2024));
+        med2.asignarTurno(new Asignacion("Consulta", "Tarde", 22,4,2024, 26,4,2024));
+        med2.asignarTurno(new Asignacion("Urgencias", "Noche", 28, 4, 2024));
         Plantilla.getInstancia().agregarEmpleado(med2);
         
-        Medico med3 = new Medico("Francisco Medico","56789123C", "Cirugia", "Sala", "Mañana" );
+        Medico med3 = new Medico("Trauma3","56789123C", "Traumatologia");
+        med3.asignarTurno(new Asignacion("Consulta", "Mañana", 17,4,2024, 19,4,2024));
+        med3.asignarTurno(new Asignacion("Consulta", "Tarde", 22,4,2024, 26,4,2024));
+        med3.asignarTurno(new Asignacion("Urgencias", "Noche", 29, 4, 2024));
         Plantilla.getInstancia().agregarEmpleado(med3);
         
-        Medico med4 = new Medico("Elisa Medico","87654321D","Traumatologia", "Quirofano", "Mañana" );
+        Medico med4 = new Medico("Elisa Medico","87654321D","Cardiologia");
         Plantilla.getInstancia().agregarEmpleado(med4);
         
-        Medico med5 = new Medico("Carmen Medico", "23686363F",  "Digestivo", "Consulta", "Mañana");
+        Medico med5 = new Medico("Carmen Medico", "23686363F",  "Digestivo");
         Plantilla.getInstancia().agregarEmpleado(med5);
         
-        Enfermero enf1 = new Enfermero("Paco Enfermero","23456789E", "Enfermeria",  "Consulta", "Tarde");
+        Enfermero enf1 = new Enfermero("Paco Enfermero","23456789E", "Enfermeria");
         Plantilla.getInstancia().agregarEmpleado(enf1);
         
-        Fisio fisio1 = new Fisio("Miguel Fisio", "34567890F", "Fisioterapia",  "Consulta", "Mañana");
+        Fisio fisio1 = new Fisio("Miguel Fisio", "34567890F", "Fisioterapia");
         Plantilla.getInstancia().agregarEmpleado(fisio1);
         
         //AGREGAR PACIENTES DE PRUEBA
