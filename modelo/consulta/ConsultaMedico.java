@@ -16,9 +16,9 @@ public class ConsultaMedico extends Consulta
     private Medico medico; 
     
     
-    public ConsultaMedico(Medico medico, int dia, int mes, int anyo)
+    public ConsultaMedico(Medico medico, int dia, int mes, int anyo, boolean tarde)
     {
-       super(dia, mes, anyo); 
+       super(dia, mes, anyo, tarde); 
        this.medico = medico; 
        
     }

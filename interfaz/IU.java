@@ -177,21 +177,14 @@ public class IU
                             "està seleccionado");
         //entrada.nextLine(); 
         
-        System.out.println("Indique la Unidad, el turno, la fecha de inicio y fecha de fin. (separe por una coma cada dato sin dejar espacios) ");
+        System.out.println("Indique la Unidad, el turno y la fecha del turno.(separe por una coma cada dato sin dejar espacios) ");
         parametros = parametrosUsuario();
         
-        Asignacion a; 
-        if(parametros.length==8){
-                    a = new Asignacion(parametros[0], parametros[1], 
-                                                  Integer.valueOf(parametros[2]), Integer.valueOf(parametros[3]), Integer.valueOf(parametros[4]), 
-                                                  Integer.valueOf(parametros[5]), Integer.valueOf(parametros[6]), Integer.valueOf(parametros[7])
-                                                  );
-                }else{
-                    a = new Asignacion(parametros[0], parametros[1], 
-                                                  Integer.valueOf(parametros[2]), Integer.valueOf(parametros[3]), Integer.valueOf(parametros[4]) 
-                                                  );
+        Asignacion a = new Asignacion(parametros[0], parametros[1], 
+                                      Integer.valueOf(parametros[2]), Integer.valueOf(parametros[3]), Integer.valueOf(parametros[4]) 
+                                     );
                     
-                }
+                
                 
         e.asignarTurno(a);
         

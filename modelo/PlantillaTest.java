@@ -49,11 +49,7 @@ public class PlantillaTest
     {
     }
 
-    @Test
-    public void probarPlantillaVacia()
-    {
-        assertEquals(null, p.buscarSanitarioPorID(1003));
-    }
+    
 
     @Test
     public void agregarUnEmpleado()

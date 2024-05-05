@@ -14,7 +14,9 @@ public abstract class Sanitario extends Empleado
 { 
     
     private String especialidad; 
-    private List<String> citasSanitario; // citas asignadas a este Sanitario
+    //private List<String> citasSanitario; // citas asignadas a este Sanitario
+    
+    
     
     public Sanitario(String nombre, String dni,String especialidad)
     {
@@ -22,11 +24,23 @@ public abstract class Sanitario extends Empleado
     
         this.especialidad = especialidad; 
          
-        citasSanitario = new ArrayList<>();
+        //citasSanitario = new ArrayList<>();
     }
     
     
+    // public boolean estaEnUnidadEnLaFecha(String unidad, int dia, int mes, int anyo){
     
+        
+        // for(Asignacion a: turnos()){
+            
+            // if(a.unidad().equalsIgnoreCase(unidad) && LocalDate.of(anyo, mes, dia).equals(a.getFecha())){
+                // return true; 
+            // }
+        // }
+        
+        // return false; 
+        
+    // }
     
     
     public String especialidad(){

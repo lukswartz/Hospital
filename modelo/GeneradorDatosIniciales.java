@@ -6,6 +6,7 @@ import personas.*;
  * Write a description of class GeneradorDatosIniciales here.
  * 
  * @author (your name) 
+k
  * @version (a version number or a date)
  */
 public class GeneradorDatosIniciales
@@ -28,20 +29,20 @@ public class GeneradorDatosIniciales
         
         //AGREGAR MEDICOS 
         Medico med1 = new Medico("Trauma1", "12345678A","Traumatologia");
-        med1.asignarTurno(new Asignacion("Consulta", "Mañana", 17,4,2024, 19,4,2024));
-        med1.asignarTurno(new Asignacion("Consulta", "Tarde", 22,4,2024, 26,4,2024));
+        med1.asignarTurno(new Asignacion("Consulta", "Mañana", 17,4,2024));
+        med1.asignarTurno(new Asignacion("Consulta", "Tarde", 22,4,2024));
         med1.asignarTurno(new Asignacion("Urgencias", "Noche", 27, 4, 2024));
         Plantilla.getInstancia().agregarEmpleado(med1);
         
         Medico med2= new Medico("Trauma2", "98765432B", "Traumatologia");
-        med2.asignarTurno(new Asignacion("Consulta", "Mañana", 17,4,2024, 19,4,2024));
-        med2.asignarTurno(new Asignacion("Consulta", "Tarde", 22,4,2024, 26,4,2024));
+        med2.asignarTurno(new Asignacion("Consulta", "Mañana", 17,4,2024));
+        med2.asignarTurno(new Asignacion("Consulta", "Tarde", 22,4,2024));
         med2.asignarTurno(new Asignacion("Urgencias", "Noche", 28, 4, 2024));
         Plantilla.getInstancia().agregarEmpleado(med2);
         
         Medico med3 = new Medico("Trauma3","56789123C", "Traumatologia");
-        med3.asignarTurno(new Asignacion("Consulta", "Mañana", 17,4,2024, 19,4,2024));
-        med3.asignarTurno(new Asignacion("Consulta", "Tarde", 22,4,2024, 26,4,2024));
+        med3.asignarTurno(new Asignacion("Consulta", "Mañana", 17,4,2024));
+        med3.asignarTurno(new Asignacion("Consulta", "Tarde", 22,4,2024));
         med3.asignarTurno(new Asignacion("Urgencias", "Noche", 29, 4, 2024));
         Plantilla.getInstancia().agregarEmpleado(med3);
         

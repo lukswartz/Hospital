@@ -13,9 +13,9 @@ public class ConsultaEnfermeria extends Consulta
     
     private Enfermero enfermero; 
     
-     public ConsultaEnfermeria(Enfermero enfermero, int dia, int mes, int anyo)
+     public ConsultaEnfermeria(Enfermero enfermero, int dia, int mes, int anyo, boolean tarde)
     {
-        super(dia, mes, anyo);
+        super(dia, mes, anyo, tarde);
         this.enfermero = enfermero;
         
        

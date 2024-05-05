@@ -45,6 +45,7 @@ public abstract class Empleado extends Persona
         return turnos; 
     }
     
+    
     /**
      * agrega a la lista de turnos del empleado una nueva asignación. 
      */
@@ -58,37 +59,18 @@ public abstract class Empleado extends Persona
      * Método que recorre la lista de asignaciones y comprueba si en la fecha
      * pasada por parámetro el empleado está en la unidad pasada por parámetro. 
      */
-    public boolean enUnidadPorFecha(String unidad, int dia, int mes, int anyo){
-        LocalDate fecha = LocalDate.of(anyo, mes, dia);
-        
-        for(Asignacion a: turnos){
-            
-            if(!fecha.isBefore(a.getFechaInicio()) && 
-                !fecha.isAfter(a.getFechaFin()) &&
-                unidad.equalsIgnoreCase(a.unidad())
-              ){
-                return true;
-               }
-        }
-        
-        return false; 
-    }
-   
+
     
     public void imprimirAsignaciones(){
         
         System.out.println("Lista de turnos asignados a: " + this.getNombre());
-        
-        LocalDate hoy = LocalDate.now();
-        
-        
         
         if(turnos.isEmpty()){
             System.out.println("El empleado no tiene turnos asignados");
         }else{
         
             for(Asignacion a: turnos){
-                a.printAsignacion();
+                System.out.println(a);
             }
         }
     }

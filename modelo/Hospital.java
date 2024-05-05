@@ -3,6 +3,7 @@ package modelo;
 import personas.*;
 import interfaz.*;
 import java.util.Scanner;
+import java.util.List;
 
 
 /**
@@ -15,6 +16,7 @@ public class Hospital
 {
     private ArchivoPacientes pacientes;
     private Plantilla plantilla; 
+    
     private IU iu; 
     
         
@@ -43,6 +45,5 @@ public class Hospital
             e.imprimirAsignaciones();            
         }
     }
-    
     
 }
