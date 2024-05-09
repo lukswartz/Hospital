@@ -36,6 +36,7 @@ public class Cita
     
     public String toString(){
         
-        return "Cita para " + especialidad + " Fecha: " + fecha.toString() + "  Hora: " + hora; 
+        return "Cita para " + especialidad + " Fecha: " + fecha.toString() + "  Hora: " + hora + "\n" + 
+                "Sanitario: " + sanitario.getNombre(); 
     }
 }

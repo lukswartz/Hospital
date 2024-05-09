@@ -3,6 +3,7 @@ package modelo;
 import personas.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Iterator;
 
 /**
  * Write a description of class Archivo here.
@@ -59,6 +60,21 @@ public class ArchivoPacientes
         }
         
         return null; 
+        
+    }
+    
+    public void eliminarPaciente(int idPaciente){
+        
+        Iterator<Paciente> it = pacientes.iterator();
+        while(it.hasNext()){
+            Paciente p = it.next(); 
+            if(p.getIdPaciente() == idPaciente){
+                it.remove();
+                System.out.println("El paciente " + p.getNombre() + " ha sido eliminado del Sistema");
+                break;
+            }
+            
+        }
         
     }
     public void imprimirArchivo(){

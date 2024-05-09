@@ -16,6 +16,7 @@ public class Hospital
 {
     private ArchivoPacientes pacientes;
     private Plantilla plantilla; 
+    private ArchivoEstudiantes estudiantes; 
     
     private IU iu; 
     
@@ -23,6 +24,7 @@ public class Hospital
     public Hospital(){
       pacientes = ArchivoPacientes.getInstancia();
        plantilla = Plantilla.getInstancia();
+       estudiantes = ArchivoEstudiantes.getInstancia();
        iu = new IU();
        
        

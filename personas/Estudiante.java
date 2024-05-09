@@ -1,6 +1,5 @@
 package personas;
 
-
 /**
  * Write a description of class Estudiante here.
  * 
@@ -28,6 +27,10 @@ public class Estudiante extends Persona
         
     }
 
+    
+    public int getIdEstudiante(){
+        return idEstudiante; 
+    }
     public String toString(){
         return this.getClass().getSimpleName() + "\n" + 
                 super.toString() + 

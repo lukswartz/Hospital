@@ -74,6 +74,23 @@ public class GeneradorDatosIniciales
         Paciente pac4 = new Paciente("Jessica Paciente", "21098765J");
         ArchivoPacientes.getInstancia().agregarPaciente(pac4);
         
-
+        //Buscar cita para traumatologia al paciente p
+        
+        GestionCitasConsultas gc = new GestionCitasConsultas("Traumatologia");
+        gc.buscaCita(3001);
+        
+        
+        
+        // Agregar estudiantes: 
+        Estudiante est1 = new Estudiante("Estudiante1", "423234d", med1);
+        ArchivoEstudiantes.getInstancia().agregarEstudiante(est1);
+        med1.asignarEstudiante(est1);
+        
+        Estudiante est2 = new Estudiante ("Estudiante2", "2435345f", med2);
+        ArchivoEstudiantes.getInstancia().agregarEstudiante(est2);
+        med2.asignarEstudiante(est2);
+        
+        
+        
     }
 }

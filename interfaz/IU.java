@@ -14,8 +14,11 @@ public class IU
 {
     private Menu menuPrincipal; 
     private Menu menuAdmin;
+    private Menu menuPersonal; 
+    private Menu menuPacientes; 
     private Scanner entrada = new Scanner(System.in); 
     private Plantilla p = Plantilla.getInstancia();
+    private ArchivoPacientes ap = ArchivoPacientes.getInstancia();
 
     
    
@@ -43,6 +46,24 @@ public class IU
         menuAdmin.getOpciones()[opcion-1].ejecutarAccion();
 
     }
+    
+    public void menuPersonal(){
+        
+        int opcion; 
+        menuPersonal.printMenu();
+        opcion = menuPersonal.obtenerOpcionUsuario();
+        menuPersonal.getOpciones()[opcion-1].ejecutarAccion();
+
+    }
+    
+    public void menuPacientes(){
+        
+        int opcion; 
+        menuPacientes.printMenu();
+        opcion = menuPacientes.obtenerOpcionUsuario();
+        menuPacientes.getOpciones()[opcion-1].ejecutarAccion();
+
+    }
     private void construirMenus(){
         
          menuPrincipal = new Menu("Principal",new MenuItem[] 
@@ -56,37 +77,44 @@ public class IU
                      );
                      
          menuAdmin =  new Menu("Administracion",new MenuItem[] 
-                           {new MenuItem("Agregar nuevo empleado",()->agregarEmpleado()), 
-                            new MenuItem("Eliminar empleado",()->eliminarEmpleado()), 
-                            new MenuItem("Editar empleado",()->System.out.println("editarEmpleado")), 
+                           {new MenuItem("Gestion de Personal",()->menuPersonal()),  
+                            new MenuItem("Gestion de Pacientes",()->menuPacientes()), 
+                            
+                            new MenuItem("Volver al menu anterior", ()->menuPrincipal())
+                            }
+                        
+                              );            
+                     
+                            
+         menuPersonal =  new Menu("Gestion Personal",new MenuItem[] 
+                           {new MenuItem("Agregar nuevo empleado",()->agregarEmpleado()),   
                             new MenuItem("Asignar turno a Empleado", ()->asignarTurno()),
                             new MenuItem("Imprimir listado Empleados", ()->{
                                                                             p.imprimirPlantilla();
                                                                             menuAdministracion();
                                                                             }),
+                            
                             new MenuItem("Volver al menu anterior", ()->menuPrincipal())
                             }
                         
                      );
-                            
-        // mapaMenus.put("administracion",
-                     // new Menu("Menu Administración",new String[] 
-                     // {"Gestion Personal", 
-                      // "Asignacion Personal", 
-                      // "Volver"
-                     // }));
                      
-        // mapaMenus.put("gestion personal",
-                      // new Menu("Menu Empleado Personal", new String[] 
-                      // {"Agregar empleado", 
-                       // "Eliminar empleado", 
-                       // "Volver"}));
-                       
-        // mapaMenus.put("medicina",
-                      // new Menu("Menu Medicina", new String[] 
-                      // {"Realizar asistencia", 
-                       // "Ver listado de pacientes", 
-                       // "Volver"}));
+          menuPacientes =  new Menu("Gestion Pacientes",new MenuItem[] 
+                           {new MenuItem("Agregar nuevo paciente",()->agregarPaciente()),   
+                            new MenuItem("Eliminar paciente", ()->eliminarPaciente()),
+                            new MenuItem("Asignar cita a paciente", ()->asignarCita()),
+                            new MenuItem("Imprimir listado Empleados", ()->{
+                                                                            ap.imprimirArchivo();
+                                                                            menuPacientes();
+                                                                            }),
+                            
+                            
+                            new MenuItem("Volver al menu anterior", ()->menuAdministracion())
+                            }
+                        
+                     );
+                     
+                     
     
         
     }
@@ -193,6 +221,51 @@ public class IU
         menuAdministracion();
         
         
+        
+        
+    }
+    
+    private void agregarPaciente(){
+        
+        String[] parametros;
+        System.out.println("MENU AGREGAR NUEVO PACIENTE"); 
+        
+        System.out.println("Indique: nombre y DNI del nuevo Empleado de Administracion (separe por una coma cada dato)"); 
+                parametros = parametrosUsuario();
+                ap.agregarPaciente(new Paciente(parametros[0], parametros[1]));
+        
+        
+        System.out.println("Se ha agregado el paciente al archivo de pacientes");
+        menuPacientes();
+       
+        
+        
+    }
+    
+    private void eliminarPaciente(){
+         System.out.println("MENU ELIMINAR PACIENTE");
+        System.out.println("Indique el ID del paciente que desea eliminar(se muestra el listado de empleados existentes)");
+        ap.imprimirArchivo();
+        int opcion = entrada.nextInt();
+        
+        Paciente  p = ap.buscarPacientePorId(opcion);
+        
+        System.out.println("El paciente con ID: " + p.getIdPaciente() + " DNI: " + p.getDNI() + " NOMBRE: " + p.getNombre() + "\n" + 
+                            "será eliminado del Sistema. ¿ESTÁ SEGURO? (S: Si, N: No)");
+        entrada.nextLine(); 
+        char seguro = entrada.next().toLowerCase().charAt(0);
+        
+        if(seguro=='s'){
+            ap.eliminarPaciente(opcion);
+            System.out.println("Se ha eliminado el paciente");
+            menuPacientes();
+        }else{
+            System.out.println("operación cancelada");
+            menuPacientes();
+        }
+        
+    }
+    private void asignarCita(){
         
         
     }
