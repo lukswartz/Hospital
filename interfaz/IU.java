@@ -103,7 +103,7 @@ public class IU
                            {new MenuItem("Agregar nuevo paciente",()->agregarPaciente()),   
                             new MenuItem("Eliminar paciente", ()->eliminarPaciente()),
                             new MenuItem("Asignar cita a paciente", ()->asignarCita()),
-                            new MenuItem("Imprimir listado Empleados", ()->{
+                            new MenuItem("Imprimir listado Pacientes", ()->{
                                                                             ap.imprimirArchivo();
                                                                             menuPacientes();
                                                                             }),
@@ -163,7 +163,7 @@ public class IU
                 
         }
         
-        menuAdministracion();
+        menuPersonal();
         
     }
     private void eliminarEmpleado(){
@@ -181,9 +181,9 @@ public class IU
         if(seguro=='s'){
             p.eliminarEmpleado(opcion);
             System.out.println("Se ha eliminado el empleado");
-            menuAdministracion();
+            menuPersonal();
         }else{
-            menuAdministracion();
+            menuPersonal();
         }
         
         
@@ -205,7 +205,7 @@ public class IU
                             "està seleccionado");
         //entrada.nextLine(); 
         
-        System.out.println("Indique la Unidad, el turno y la fecha del turno.(separe por una coma cada dato sin dejar espacios) ");
+        System.out.println("Indique la Unidad, el turno y la fecha del turno (dd,mm,aaaa).(separe por una coma cada dato sin dejar espacios) ");
         parametros = parametrosUsuario();
         
         Asignacion a = new Asignacion(parametros[0], parametros[1], 
@@ -218,7 +218,7 @@ public class IU
         
         System.out.println("Turno asignado al empleado");
         
-        menuAdministracion();
+        menuPersonal();
         
         
         
@@ -267,6 +267,16 @@ public class IU
     }
     private void asignarCita(){
         
+        System.out.println("Indicar especialidad para la cita"); 
+        String esp = entrada.nextLine();
+        GestionCitasConsultas gc = new GestionCitasConsultas(esp);
+        System.out.println("Indicar id del Paciente");
+        int opcion = entrada.nextInt();
+        
+        gc.buscaCita(opcion); 
+        
+        menuPacientes();
+                
         
     }
     private String[] parametrosUsuario(){

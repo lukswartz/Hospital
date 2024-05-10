@@ -20,10 +20,10 @@ public class Paciente extends Persona
 
     /**
      * Constructor for objects of class Paciente
+     * @param String nombre, String dni. 
      */
     public Paciente(String nombre, String dni)
     {
-        // initialise instance variables
        super(nombre, dni);
        contadorPacientes++;
        idPaciente = obtenerNuevoNumeroHistorial();
@@ -47,6 +47,12 @@ public class Paciente extends Persona
                 " ID: " + idPaciente + "\n" +
                 "=======================================";
                 
+    }
+    public void ImprimirCitas(){
+        
+        for(Cita c: citas){
+            System.out.println(c);
+        }
     }
     /**
      * Método privado que asigna un identificador único a cada paciente. 

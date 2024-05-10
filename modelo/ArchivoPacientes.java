@@ -82,6 +82,7 @@ public class ArchivoPacientes
         if(!pacientes.isEmpty()){
         for(Paciente p: pacientes){
             System.out.println(p);
+            p.ImprimirCitas();
         }
         }else{
             System.out.println("No hay ningun paciente en el sistema");
