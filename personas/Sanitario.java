@@ -1,13 +1,10 @@
 package personas;
-import java.util.List;
-import java.util.ArrayList;
-import java.time.LocalDate;
-
 
 /**
- * Un empleado de tipo Sanitario tiene una lista de Citas para cada dia de trabajo. 
- * 
- * @author (your name) 
+ * Agrupa características comunes a las clases Medico, Enfermero y Fisio. 
+ * Actualmente dispone de campos de instancia de tipo String para indicar la especialidad y 
+ * el alumno a su cargo. 
+ * @author Juan Ortiz 
  * @version (a version number or a date)
  */
 public abstract class Sanitario extends Empleado
@@ -15,9 +12,7 @@ public abstract class Sanitario extends Empleado
     
     private String especialidad; 
     private Estudiante alumno; 
-    
-    
-    
+     
     
     public Sanitario(String nombre, String dni,String especialidad)
     {
@@ -28,7 +23,7 @@ public abstract class Sanitario extends Empleado
         
     }
     
-    
+    //métodos selectores
     
     public String especialidad(){
         return especialidad;
@@ -38,6 +33,7 @@ public abstract class Sanitario extends Empleado
         return alumno; 
     }
     
+    //método mutador para asignar un estudiante a este sanitario. 
     public void asignarEstudiante (Estudiante e){
         alumno = e; 
     }

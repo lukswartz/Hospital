@@ -4,14 +4,16 @@ import java.util.ArrayList;
 import java.time.LocalDate;
 
 /**
- * Write a description of class Empleado here.
+ * Representa a objetos de tipo empleado. Un empleado se caracteriza por disponer 
+ * de un identificador único de tipo entero. También dispone de un campo de instancia
+ * de tipo List<> que almacenará la lista de turnos asignados a este empleado. La asignación 
+ * incluye fecha, unidad y turno junto con el identificador del empleado. 
+ * @author Juan Ortiz 
  * 
- * @author (your name) 
- * @version (a version number or a date)
  */
 public abstract class Empleado extends Persona
 {
-    // instance variables - replace the example below with your own
+    
     private int idEmpleado;
     private static int contadorEmpleados = 0;
     private List<Asignacion> turnos; //lista con los turnos asignados al empleado
@@ -19,8 +21,8 @@ public abstract class Empleado extends Persona
     
 
     /**
-     * Constructor de Empleado. Asigna el nombre, asigna un idEmpleado
-     * 
+     * Constructor de Empleado. Asigna el nombre, asigna un idEmpleado de forma secuencial
+     * mediante el método privado obtenerNuevoIdEmpleado(). 
      */
     public Empleado(String nombre, String dni)
     {

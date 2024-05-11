@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Sanitario
-comment0.text=\r\n\ Un\ empleado\ de\ tipo\ Sanitario\ tiene\ una\ lista\ de\ Citas\ para\ cada\ dia\ de\ trabajo.\ \r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Agrupa\ caracter\u00EDsticas\ comunes\ a\ las\ clases\ Medico,\ Enfermero\ y\ Fisio.\ \r\n\ Actualmente\ dispone\ de\ campos\ de\ instancia\ de\ tipo\ String\ para\ indicar\ la\ especialidad\ y\ \r\n\ el\ alumno\ a\ su\ cargo.\ \r\n\ @author\ Juan\ Ortiz\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=nombre\ dni\ especialidad
 comment1.target=Sanitario(java.lang.String,\ java.lang.String,\ java.lang.String)
 comment2.params=

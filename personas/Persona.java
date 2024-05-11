@@ -1,13 +1,12 @@
 package personas;
 /**
- * Write a description of class Persona here.
+ * Representa una persona con sus atributos para identificarla de forma única
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Juan Ortiz López
  */
 public abstract class Persona
 {
-    // instance variables - replace the example below with your own
+    
     private String nombre;
     private String dni; 
     private String numTelefono;
@@ -16,6 +15,10 @@ public abstract class Persona
 
     /**
      * Constructor for objects of class Persona
+     * Se puede iniciar el objeto sólo con nombre y dni, opcionalmente se pueden asignar los valores 
+     * del número de Teléfono y de la fecha de Nacimiento en el momento de instanciar. 
+     * @param Strin nombre, String dni (obligatorios ambos) 
+     * 
      */
     public Persona(String nombre, String dni, String numTelefono, String fechaNacimiento)
     {
@@ -26,10 +29,12 @@ public abstract class Persona
         this.fechaNacimiento = fechaNacimiento;
     }
     
+    //Sobrecarga de constructor para inicializar el objeto sin asignar numTelefono y fechaDeNacimiento
     public Persona(String nombre, String dni){
         this(nombre, dni, null, null); 
     }
 
+    // Métodos setters y getters
     public String getNombre(){ return nombre;}
     public String getDNI() {return dni;}
     public String getnumTelefono(){ return numTelefono;}
@@ -40,6 +45,7 @@ public abstract class Persona
     public void setNumTelefono(String numTelefono){this.numTelefono = numTelefono;}
     public void setfechaNacimiento(String fechaNacimiento){this.fechaNacimiento = fechaNacimiento;}
     
+    // Se sobreescribe el método heredado de la clase Object toString para mostrar atributos como String
     public String toString(){
         
         return " NOMBRE: " + nombre + " DNI: " + dni  + 

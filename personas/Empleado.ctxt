@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=Empleado
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Empleado\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Representa\ a\ objetos\ de\ tipo\ empleado.\ Un\ empleado\ se\ caracteriza\ por\ disponer\ \r\n\ de\ un\ identificador\ \u00FAnico\ de\ tipo\ entero.\ Tambi\u00E9n\ dispone\ de\ un\ campo\ de\ instancia\r\n\ de\ tipo\ List<>\ que\ almacenar\u00E1\ la\ lista\ de\ turnos\ asignados\ a\ este\ empleado.\ La\ asignaci\u00F3n\ \r\n\ incluye\ fecha,\ unidad\ y\ turno\ junto\ con\ el\ identificador\ del\ empleado.\ \r\n\ @author\ Juan\ Ortiz\ \r\n\ \r\n
 comment1.params=nombre\ dni
 comment1.target=Empleado(java.lang.String,\ java.lang.String)
-comment1.text=\r\n\ Constructor\ de\ Empleado.\ Asigna\ el\ nombre,\ asigna\ un\ idEmpleado\r\n\ \r\n
+comment1.text=\r\n\ Constructor\ de\ Empleado.\ Asigna\ el\ nombre,\ asigna\ un\ idEmpleado\ de\ forma\ secuencial\r\n\ mediante\ el\ m\u00E9todo\ privado\ obtenerNuevoIdEmpleado().\ \r\n
 comment2.params=
 comment2.target=int\ getIdEmpleado()
 comment2.text=\r\n\ M\u00E9todos\ geters\ y\ seters\r\n

@@ -3,10 +3,12 @@ import modelo.consulta.*;
 import java.util.List;
 
 /**
- * Write a description of class Medico here.
+ * Representa a un médico del sistema. 
+ * Comparte los atributos y métodos de sus superclases: Persona, Empleado y Sanitario
+ * Dispone de un atributo propio de tipo ConsultasProgramadas donde se almacenarán
+ * todas las consultas programadas para este médico. 
+ * @author Juan Ortiz
  * 
- * @author (your name) 
- * @version (a version number or a date)
  */
 public class Medico extends Sanitario
 {
