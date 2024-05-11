@@ -11,17 +11,19 @@ public class Estudiante extends Persona
     
     private int idEstudiante; 
     private static int contadorEstudiante = 0; 
+    private String tipoEstudiante; 
     
     private Sanitario tutor; 
 
     /**
      * Constructor for objects of class Estudiante
      */
-    public Estudiante(String nombre, String dni, Sanitario tutor)
+    public Estudiante(String nombre, String dni, String tipoEstudiante, Sanitario tutor)
     {
         // initialise instance variables
         super(nombre, dni);
         this.tutor = tutor; 
+        this.tipoEstudiante = tipoEstudiante; 
         contadorEstudiante++;
         idEstudiante = obtenerNuevoIdEstudiante();
         

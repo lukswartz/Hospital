@@ -82,13 +82,37 @@ public class GeneradorDatosIniciales
         
         
         // Agregar estudiantes: 
-        Estudiante est1 = new Estudiante("Estudiante1", "423234d", med1);
+        Estudiante est1 = new Estudiante("Estudiante1", "423234d","Medicina",  med1);
         ArchivoEstudiantes.getInstancia().agregarEstudiante(est1);
         med1.asignarEstudiante(est1);
         
-        Estudiante est2 = new Estudiante ("Estudiante2", "2435345f", med2);
+        Estudiante est2 = new Estudiante ("Estudiante2", "2435345f", "Medicina",  med2);
         ArchivoEstudiantes.getInstancia().agregarEstudiante(est2);
         med2.asignarEstudiante(est2);
+        
+        Estudiante est3 = new Estudiante("Estudiante3", "234234", "Medicina", med3);
+        ArchivoEstudiantes.getInstancia().agregarEstudiante(est3);
+        med3.asignarEstudiante(est3);
+        
+        Estudiante est4 = new Estudiante("Estudiante4", "2367834", "Enfermeria", enf1);
+        ArchivoEstudiantes.getInstancia().agregarEstudiante(est4);
+        enf1.asignarEstudiante(est3);
+        
+        
+        
+        
+        //Crear una clase con una descripción, un sanitario como profesor y una fecha 
+        UnidadFormacion uf= new UnidadFormacion();
+        Clase c1 = new Clase("Fundamentos de Patología", med3, 15,5,2024);
+        c1.matricularAlumno(est1);
+        c1.matricularAlumno(est2);
+        uf.agregarNuevaClase(c1);
+        
+        Clase c2 = new Clase("Enfermeria I", enf1, 20,5,2024);
+        
+        
+        
+        
         
         
         

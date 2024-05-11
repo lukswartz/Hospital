@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=Clase
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Clase\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=desc\ prof\ dia\ mes\ anyo
+comment1.target=Clase(java.lang.String,\ personas.Sanitario,\ int,\ int,\ int)
+comment2.params=desc\ prof\ fecha
+comment2.target=Clase(java.lang.String,\ personas.Sanitario,\ java.time.LocalDate)
+comment3.params=
+comment3.target=java.lang.String\ descripcion()
+comment4.params=
+comment4.target=personas.Sanitario\ profesor()
+comment5.params=
+comment5.target=java.time.LocalDate\ fecha()
+comment6.params=
+comment6.target=java.util.List\ alumnos()
+comment7.params=e
+comment7.target=void\ matricularAlumno(personas.Estudiante)
+comment8.params=
+comment8.target=java.lang.String\ toString()
+numComments=9

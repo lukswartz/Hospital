@@ -27,6 +27,7 @@ public class Consulta
     private  LocalTime horaFinal;
     private int numeroHuecos; 
     private LocalDate fecha; 
+    private Estudiante alumno; 
     private int[] pacientes; //array con los id de pacientes citados agregados en orden cronológico
     private boolean tarde; //Indicador de mañana o tarde. 
     
@@ -66,7 +67,9 @@ public class Consulta
         return fecha; 
     }
     
-    
+    public void asignarEstudiante(Estudiante e){
+        alumno = e; 
+    }
     
     /**
      * Método asignarHora: 
